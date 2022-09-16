@@ -1,0 +1,209 @@
+let s:plugged = $MYRUNTIME . '/plugged'
+
+"------VIM-PLUGINS------
+call plug#begin(s:plugged)
+
+" The NERDTree is a file system explorer for the Vim editor.
+Plug 'scrooloose/nerdtree'
+
+" Buffer list explorer.
+Plug 'jeetsukumaran/vim-buffergator'
+
+" Echo buffers on the command line when switching buffers.
+Plug 'bling/vim-bufferline'
+
+" For moving buffers across windows.
+Plug 'wesq3/vim-windowswap'
+
+" Delete buffers without closing the window.
+Plug 'qpkorr/vim-bufkill'
+
+" Cool statusline.
+Plug 'itchyny/lightline.vim'
+
+" Statusline scrollbar display.
+Plug 'gcavallanti/vim-noscrollbar'
+
+" Filetype Templates
+Plug 'aperezdc/vim-template'
+
+" Snippets
+Plug 'marcweber/vim-addon-mw-utils' " Sniptmate dependency
+Plug 'tomtom/tlib_vim' " Sniptmate dependency
+Plug 'garbas/vim-snipmate'
+
+" ALE (Asynchronous Lint Engine)
+Plug 'dense-analysis/ale'
+
+" Comments operator.
+Plug 'tpope/vim-commentary'
+
+" Replace with register operator.
+Plug 'vim-scripts/ReplaceWithRegister'
+
+" Insert or delete brackets, parens, quotes in pairs.
+Plug 'jiangmiao/auto-pairs'
+
+" Insert tags in pairs.
+Plug 'alvan/vim-closetag'
+
+" Repeat plugin commands with '.'.
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/visualrepeat'
+
+" Surround text-objects.
+Plug 'tpope/vim-surround'
+
+" Adds text-object that's based on indentation level.
+Plug 'michaeljsmith/vim-indent-object'
+
+" Custom and fold text objects.
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-fold'
+
+" Highlight text over textwidth.
+Plug 'whatyouhide/vim-lengthmatters'
+
+" For highlighting and removing trailing whitespace.
+Plug 'ntpeters/vim-better-whitespace'
+
+" Indent guides for spaces.
+Plug 'Yggdroot/indentLine'
+
+" Sets relative number only for the file being navigated.
+Plug 'myusuf3/numbers.vim'
+
+" Emmet
+Plug 'mattn/emmet-vim'
+
+" Javascript Syntax
+Plug 'pangloss/vim-javascript'
+
+" Markdown Syntax
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" Themes.
+Plug 'morhetz/gruvbox'
+Plug 'ajmwagar/vim-deus'
+Plug 'jdkanani/vim-material-theme'
+Plug 'tomasr/molokai'
+Plug 'arcticicestudio/nord-vim'
+
+"------GVIM-PLUGINS------
+if has("gui_running")
+    " For fullscreen support.
+    Plug 'zhmars/gvimtweak'
+endif
+
+call plug#end()
+
+"------FIRST-PLUGINS------
+" First runtimepath directories loaded.
+let s:first_plugins = ['vim-markdown', 'vim-javascript']
+let s:first_plugins = map(s:first_plugins, {i, plugin ->
+    \ expand(s:plugged . '/' . plugin)
+\ })
+
+let s:rtps = filter(split(&runtimepath, ','), {i, path ->
+    \ index(s:first_plugins, path) == -1
+\ })
+
+let &runtimepath = join(s:first_plugins + s:rtps, ',')
+
+"------DISABLE-NETRW------
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
+"------NERDTree------
+let g:NERDTreeBookmarksFile = expand($MYRUNTIME . "/nerdmarks")
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinSize = 40
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+"------BUFFERGATOR------
+let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_suppress_keymaps = 1
+let g:buffergator_display_regime = "parentdir"
+let g:buffergator_window_statusline = 0
+let g:buffergator_tab_statusline = 0
+let g:buffergator_viewport_split_policy = "B"
+
+"------BUFFERLINE------
+let g:bufferline_active_buffer_left = g:open_fat_bracket
+let g:bufferline_active_buffer_right = g:close_fat_bracket
+let g:bufferline_modified = ' [+]'
+let g:bufferline_rotate = 1
+
+"------WINDOWSWAP------
+let g:windowswap_map_keys = 0
+
+"------BUFKILL------
+let g:BufKillCreateMappings = 0
+let g:BufKillActionWhenBufferDisplayedInAnotherWindow = 'kill'
+
+"------LIGHTLINE------
+source $MYRUNTIME/vimrc-lightline
+
+"------VIM-TEMPLATE------
+let g:templates_directory = $MYRUNTIME . '/templates'
+let g:templates_no_builtin_templates = 1
+
+"------SNIPMATE------
+let g:snips_no_mappings = 1
+let g:snipMate = {
+    \ 'snippet_version': 1,
+    \ 'no_default_aliases': 1,
+    \ 'scope_aliases': {
+        \ 'html': 'css,javascript'
+    \ },
+\ }
+
+" ------ALE------
+" let g:ale_enabled = 0
+let g:ale_echo_cursor = 0
+let g:ale_set_signs = 0
+let g:ale_sign_error = '!!'
+let g:ale_sign_warning = '**'
+
+"------SURROUND-TEXT-OBJECT------
+let g:surround_no_mappings = 1
+
+"------FOLD-TEXT-OBJECT------
+let g:textobj_fold_no_default_key_mappings = 1
+
+"------LengthMatters------
+call lengthmatters#highlight('guibg=#000000')
+let g:lengthmatters_excluded = [
+    \ '',
+    \ 'text',
+    \ 'html',
+    \ 'nerdtree',
+    \ 'help',
+\ ]
+
+"------BETTER-WHITESPACE------
+let g:better_whitespace_enabled = 0
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
+let g:strip_whitelines_at_eof = 1
+let g:show_spaces_that_precede_tabs = 1
+"let g:better_whitespace_filetypes_blacklist=['vim']
+" highlight! link ExtraWhitespace Error
+
+"------INDENT-LINE------
+let g:indentLine_enabled = 0
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_first_char = "|"
+let g:indentLine_char = "|"
+let g:indentLine_concealcursor = ''
+if has("gui_running")
+    let g:indentLine_first_char = "┇"
+    let g:indentLine_char = "┇"
+endif
+" let g:indentLine_fileTypeExclude = ['markdown']
+
+"------EMMET------
+let g:user_emmet_install_global = 0

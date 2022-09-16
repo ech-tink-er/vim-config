@@ -1,0 +1,48 @@
+# Function
+snippet m
+	function$1 ${2:FUNCTION_NAME}($3)
+		${4:${VISUAL}}
+	endfunction
+
+# If
+snippet f
+	if ${1:true}
+		${2:${VISUAL}}
+	endif
+
+snippet l
+	else
+		${1:${VISUAL}}
+
+snippet fl
+	if ${1:true}
+		${2:${VISUAL}}
+	else
+		$3
+	endif
+
+snippet lf
+	elseif ${1:true}
+		${2:${VISUAL}}
+
+snippet eif
+	endif
+
+# Loops
+snippet w
+	while ${1:true}
+		${2:${VISUAL}}
+	endwhile
+
+snippet r
+	for (${1:i} in ${2:range($3)})
+		${4:${VISUAL}}
+	endfor
+
+# Print
+snippet r
+	echo ${1:${VISUAL}}
+
+# Section
+snippet -
+	"------${1:SECTION}------

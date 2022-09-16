@@ -1,0 +1,72 @@
+let g:lightline = {}
+
+let g:lightline.colorscheme = 'molokai_mod'
+
+let g:lightline.separator = { 'left': '', 'right': '' }
+
+let g:lightline.subseparator = { 'left': '', 'right': '' }
+
+let g:lightline.component = {}
+"\ }
+
+let g:lightline.component_visible_condition = {
+\ }
+
+" Funcitons that pull and format the status line info.
+let g:lightline.component_function = {
+    \ 'mode': 'lightline#components#get_mode',
+    \ 'file': 'lightline#components#get_file',
+    \ 'flags': 'lightline#components#get_flags',
+    \ 'filetype': 'lightline#components#get_filetype',
+    \ 'filedata': 'lightline#components#get_filedata',
+    \ 'percent': 'lightline#components#get_percent',
+    \ 'lineinfo': 'lightline#components#get_lineinfo',
+    \
+    \ 'noscrollbar': 'lightline#components#get_noscrollbar',
+    \ 'nerd_tree_dir': 'lightline#components#get_nerd_tree_dir',
+    \ 'buffergator': 'lightline#components#get_buffergator',
+\ }
+
+" Functions that check whether to display status line info.
+let g:lightline.component_function_visible_condition = {
+    \ 'file': 'lightline#components#should_display_file()',
+    \ 'flags': 'lightline#components#should_display_flags()',
+    \ 'filetype': 'lightline#components#should_display_filetype()',
+    \ 'filedata': 'lightline#components#should_display_filedata()',
+    \ 'percent': 'lightline#components#should_display_percent()',
+    \ 'lineinfo': 'lightline#components#should_display_lineinfo()',
+    \
+    \ 'noscrollbar': 'lightline#components#should_display_noscrollbar()',
+    \ 'nerd_tree_dir': 'lightline#components#should_display_nerd_tree_dir()',
+    \ 'buffergator': 'lightline#components#should_display_buffergator()',
+\ }
+
+let lightline.tab_component_function = {
+    \ 'tabnum': 'lightline#components#get_tabnum',
+    \ 'wincount': 'lightline#components#get_wincount',
+\ }
+
+let g:lightline.mode_map = {
+\ }
+
+" For active windows.
+let g:lightline.active = {
+    \ 'left': [
+        \ ['mode', 'paste'],
+        \ ['buffergator', 'nerd_tree_dir', 'file', 'flags'],
+        \ ['filetype', 'filedata']
+    \ ],
+    \ 'right': [['percent', 'lineinfo', 'linetest'], ['noscrollbar']]
+\ }
+
+" For inactive windows.
+let g:lightline.inactive = {
+    \ 'left': [['buffergator', 'nerd_tree_dir', 'file', 'flags']],
+\ }
+
+let g:lightline.tabline = { 'right': [] }
+
+let g:lightline.tab = {
+    \ 'active': [ 'tabnum', 'filename', 'modified', 'wincount'],
+    \ 'inactive': [ 'tabnum', 'filename', 'modified', 'wincount']
+\ }

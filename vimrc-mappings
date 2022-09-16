@@ -1,0 +1,599 @@
+"------MOUSE------
+set mouse=
+
+"------UNMAPS------
+nnoremap h <nop>
+xnoremap h <nop>
+onoremap h <nop>
+
+nnoremap : <nop>
+onoremap : <nop>
+xnoremap : <nop>
+
+nnoremap - <nop>
+xnoremap - <nop>
+onoremap - <nop>
+
+nnoremap <c-o> <nop>
+
+nnoremap <c-r> <nop>
+
+nnoremap <c-d> <nop>
+xnoremap <c-d> <nop>
+
+nnoremap <c-u> <nop>
+xnoremap <c-u> <nop>
+
+nnoremap <c-f> <nop>
+xnoremap <c-f> <nop>
+
+nnoremap <c-b> <nop>
+xnoremap <c-b> <nop>
+
+nnoremap <c-e> <nop>
+xnoremap <c-e> <nop>
+
+nnoremap <c-y> <nop>
+xnoremap <c-y> <nop>
+
+nnoremap <c-end> <nop>
+xnoremap <c-end> <nop>
+
+nnoremap <c-home> <nop>
+xnoremap <c-home> <nop>
+
+nnoremap zz <nop>
+xnoremap zz <nop>
+
+nnoremap zt <nop>
+xnoremap zt <nop>
+
+nnoremap zb <nop>
+xnoremap zb <nop>
+
+nnoremap @ <nop>
+xnoremap @ <nop>
+
+nnoremap <c-w>h <nop>
+nnoremap <c-w><a-h> <nop>
+nnoremap <c-w>H <nop>
+
+" auto-pairs
+let g:AutoPairsShortcutToggle = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsShortcutBackInsert = ''
+
+"------MOTIONS------
+nnoremap j <left>
+nnoremap k <up>
+nnoremap l <down>
+nnoremap ; <right>
+
+onoremap j <left>
+onoremap k <up>
+onoremap l <down>
+onoremap ; <right>
+
+xnoremap j <left>
+xnoremap k <up>
+xnoremap l <down>
+xnoremap ; <right>
+
+nnoremap q b
+nnoremap Q B
+onoremap q b
+onoremap Q B
+xnoremap q b
+xnoremap Q B
+
+nnoremap , ;
+onoremap , ;
+xnoremap , ;
+
+nnoremap < ,
+onoremap < ,
+xnoremap < ,
+
+" nnoremap 0 ^
+" onoremap 0 ^
+" xnoremap 0 ^
+
+" nnoremap ^ 0
+" onoremap ^ 0
+" xnoremap ^ 0
+
+"------OPERATORS------
+" delete
+nnoremap <a-d> d^
+
+nnoremap <silent> <expr> <a-x>
+    \ printf('<esc><right>%sx<left>', v:count ? v:count : '')
+
+" change
+nnoremap <a-c> c^
+
+nnoremap S c<left>
+nnoremap <silent> <expr> <a-s>
+    \ printf('<esc><right>%ss', v:count ? v:count : '')
+
+" yank
+nnoremap Y y$
+nnoremap <a-y> y^
+
+" move
+" nmap M <plug>MoveUpOperatorLine
+" nmap [m <plug>MoveUpOperator
+" nmap [mm <plug>MoveUpOperatorLine
+" nmap [m[m <plug>MoveUpOperatorLine
+" xmap M <plug>MoveUpOperator
+
+" nmap m <plug>MoveDownOperatorLine
+" nmap ]m <plug>MoveDownOperator
+" nmap ]mm <plug>MoveDownOperatorLine
+" nmap ]m]m <plug>MoveDownOperatorLine
+" xmap m <plug>MoveDownOperator
+
+" duplicate
+" nmap h <plug>DuplicateOperator
+" nmap hh <plug>DuplicateOperatorLine
+" xmap h <plug>DuplicateOperator
+
+" indent
+nnoremap <tab> >
+onoremap <tab> >
+xnoremap <tab> >
+
+nnoremap <s-tab> <
+onoremap <s-tab> <
+xnoremap <s-tab> <
+nnoremap <s-tab><tab> <<
+xnoremap <s-tab><tab> <<
+
+" format
+nnoremap @ =
+onoremap @ =
+xnoremap @ =
+
+"------TEXT-OBJECTS------
+" surround
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap cS  <Plug>CSurround
+nmap gs  <Plug>Ysurround
+nmap gS  <Plug>YSurround
+nmap gss <Plug>Yssurround
+nmap gSs <Plug>YSsurround
+nmap gSS <Plug>YSsurround
+xmap gs   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+
+" fold
+xmap af <Plug>(textobj-fold-a)
+omap af <Plug>(textobj-fold-a)
+
+"------SCROLLING------
+nnoremap K <c-u>
+xnoremap K <c-u>
+
+nnoremap L <c-d>
+xnoremap L <c-d>
+
+nnoremap <a-k> <c-b>
+xnoremap <a-k> <c-b>
+
+nnoremap <a-l> <c-f>
+xnoremap <a-l> <c-f>
+
+nnoremap <space><space> zz
+xnoremap <space><space> zz
+
+nnoremap <space>k zt
+xnoremap <space>k zt
+
+nnoremap <space>l zb
+xnoremap <space>l zb
+
+nnoremap <up> <c-u>
+xnoremap <up> <c-u>
+
+nnoremap <down> <c-d>
+xnoremap <down> <c-d>
+
+nnoremap <home> <c-y>
+xnoremap <home> <c-y>
+
+nnoremap <end> <c-e>
+xnoremap <end> <c-e>
+
+nnoremap <s-home> gg
+xnoremap <s-home> gg
+
+nnoremap <s-end> G
+xnoremap <s-end> G
+
+"------JUMPS------
+nnoremap <c-k> <c-o>
+nnoremap <c-l> <c-i>
+
+"------CHANGES------
+nnoremap <a-[> g;
+nnoremap <a-]> g,
+
+"------BUFFERS------
+nnoremap <silent> <expr> J
+    \ printf(':<c-u>%s bprevious<cr>', v:count ? v:count : '')
+nnoremap <silent> <expr> :
+    \ printf(':<c-u>%s bnext<cr>', v:count ? v:count : '')
+
+"------ARGS------
+nnoremap <silent> <expr> <a-j>
+    \ printf(':<c-u>%s previous<cr>', v:count ? v:count : '')
+nnoremap <silent> <expr> <a-;>
+    \ printf(':<c-u>%s next<cr>', v:count ? v:count : '')
+
+"------QUICKFIX-LISTS------
+" nnoremap <silent> <expr> -
+"     \ printf(':<c-u>%s cprevious<cr>', v:count ? v:count : '')
+" nnoremap <silent> <expr> =
+"     \ printf(':<c-u>%s cnext<cr>', v:count ? v:count : '')
+
+" nnoremap <silent> <expr> <f9>
+"     \ printf(':<c-u>colder %s<cr>', v:count ? v:count : '')
+" nnoremap <silent> <expr> <f10>
+"     \ printf(':<c-u>cnewer %s<cr>', v:count ? v:count : '')
+
+"------LOCATION-LISTS------
+nnoremap <silent> <expr> -
+    \ printf(':<c-u>%s lprevious<cr>', v:count ? v:count : '')
+nnoremap <silent> <expr> =
+    \ printf(':<c-u>%s lnext<cr>', v:count ? v:count : '')
+
+" nnoremap <silent> <expr> <s-f9>
+"     \ printf(':<c-u>lolder %s<cr>', v:count ? v:count : '')
+" nnoremap <silent> <expr> <s-f10>
+"     \ printf(':<c-u>lnewer %s<cr>', v:count ? v:count : '')
+
+"------MARKS------
+nnoremap <a-'> m
+onoremap <a-'> m
+xnoremap <a-'> m
+
+nnoremap ' `
+onoremap ' `
+xnoremap ' `
+
+nnoremap " '
+onoremap " '
+xnoremap " '
+
+"------REGISTERS-AND-MACROS------
+nnoremap b "
+xnoremap b "
+
+nnoremap B q
+xnoremap B q
+
+nnoremap > @
+xnoremap > @
+
+nnoremap >> @@
+xnoremap >> @@
+
+nnoremap >` @:
+xnoremap >` @:
+
+"------UNDO-REDO------
+nnoremap U <c-r>
+
+nnoremap <a-u> U
+
+nnoremap <f1> g-
+nnoremap <f2> g+
+
+"------BLANKS------
+" nmap [o <plug>AddBlanksAbove
+" nmap ]o <plug>AddBlanksBelow
+
+" xmap [o <plug>AddBlanksAbove
+" xmap ]o <plug>AddBlanksBelow
+
+"------CLIPBOARD------
+" nnoremap gd "+d
+" xnoremap gd "+d
+
+" nnoremap gD "+D
+" nnoremap g<a-d> "+d^
+
+" nnoremap gy "+y
+" xnoremap gy "+y
+
+" nnoremap gY "+y$
+" nnoremap g<a-y> "+y^
+
+" nnoremap gp "+p
+" xnoremap gp "+p
+
+" nnoremap gP "+P
+" xnoremap gP "+P
+
+"------SEARCH------
+nnoremap g3 g#
+nnoremap g8 g*
+
+nnoremap <a-8> *<c-o>
+nnoremap g<a-8> g*<c-o>
+
+" Search visual selection.
+nmap <space>? <plug>VisualSearchPrev
+nmap <space>/ <plug>VisualSearchNext
+xmap <space>? <plug>VisualSearchPrev
+xmap <space>/ <plug>VisualSearchNext
+
+"------JOIN------
+function! s:ModJoinCount(space)
+    let l:count = 1 < v:count ? v:count + 1 : v:count
+    let l:join_cmd = a:space ? "J" : "gJ"
+
+    let res = "\<c-c>" . l:count . l:join_cmd
+    echo res
+    return res
+endfunction
+
+nnoremap <expr> gj <sid>ModJoinCount(1)
+xnoremap <expr> gj <sid>ModJoinCount(1)
+nnoremap <expr> gJ <sid>ModJoinCount(0)
+xnoremap <expr> gJ <sid>ModJoinCount(0)
+
+" Clear search highlights on CTRL-C.
+noremap <silent> <c-c> <c-c>:noh<cr>
+
+"------WINDOWS------
+" Esc
+nnoremap <expr> <c-w><esc> '\<nop\>'
+
+nnoremap gw <c-w>w
+
+nnoremap <c-w>j <c-w><left>
+nnoremap <c-w>k <c-w><up>
+nnoremap <c-w>l <c-w><down>
+nnoremap <c-w>; <c-w><right>
+
+nnoremap <c-w><a-j> <c-w>H
+nnoremap <c-w><a-k> <c-w>K
+nnoremap <c-w><a-l> <c-w>J
+nnoremap <c-w><a-;> <c-w>L
+
+" WindowSwap
+nnoremap <silent> <c-w>m :<c-u>call WindowSwap#EasyWindowSwap()<cr>
+nmap <c-w>J <c-w>m<c-w>j<c-w>m
+nmap <c-w>K <c-w>m<c-w>k<c-w>m
+nmap <c-w>L <c-w>m<c-w>l<c-w>m
+nmap <c-w>: <c-w>m<c-w>;<c-w>m
+
+"------INSERT------
+" put (paste)
+inoremap <c-p> <c-r>*
+" inoremap <a-p> <c-r>+
+
+" completion
+inoremap <a-k> <c-p>
+inoremap <a-l> <c-n>
+inoremap <a-o> <c-x><c-o>
+inoremap <a-f> <c-x><c-f>
+
+" Break and open new line.
+inoremap <c-cr> <cr><cr><up><tab>
+
+" auto-pairs wrap (surround)
+let g:AutoPairsShortcutFastWrap = '<c-s>'
+
+" Execute normal command.
+inoremap <s-esc> <c-o>
+
+"------EX------
+nnoremap <expr> ` v:count ? printf(':<c-u>.,.+%d', v:count) : ':'
+onoremap ` :
+xnoremap ` :
+
+nmap ]` `
+nnoremap <expr> [` v:count ? printf(':<c-u>.-%d,.', v:count) : ':'
+
+nnoremap ~ Q
+
+nnoremap <a-`> gQ
+
+" Reset enter for normal mode command-line editing.
+function! s:ResetEnter()
+    nnoremap <buffer> <nowait> <cr> <cr>
+    inoremap <buffer> <nowait> <cr> <cr>
+endfunction
+
+nnoremap g` q::<c-u>call <sid>ResetEnter()<cr>
+xnoremap g` q::<c-u>call <sid>ResetEnter()<cr>
+
+nnoremap g/ q/:<c-u>call <sid>ResetEnter()<cr>
+
+nnoremap g? q?:<c-u>call <sid>ResetEnter()<cr>
+
+nmap <expr> <space>` '`norm '
+nmap <expr> <space>]` ']`norm '
+nmap <expr> <space>[` '[`norm '
+
+cabbrev te tabedit
+
+"------SPACE------
+" Esc
+nnoremap <expr> <space><esc> '\<nop\>'
+
+nnoremap <silent> <space>f :NERDTreeToggle<cr>
+nnoremap <silent> <space>b :BuffergatorToggle<cr>
+
+" Toggle relative numbers.
+nnoremap <silent> <space>1 :NumbersToggle<cr>
+
+"------SNIPMATE------
+imap <tab> <plug>snipMateNextOrTrigger
+smap <tab> <plug>snipMateNextOrTrigger
+
+imap <s-tab> <plug>snipMateBack
+smap <s-tab> <plug>snipMateBack
+
+imap <c-tab> <plug>snipMateTrigger
+
+xmap <cr><cr> <plug>snipMateVisual
+
+"------ENTER-SNIPPETS------
+function! s:MakeSnippetMap(snippet, direction)
+    let open = a:direction ? 'o' : 'O'
+
+    let enter_insert = empty(trim(getline('.'))) ? 'cc' : open
+
+    let g:the_map = enter_insert . a:snippet . "\<c-tab>"
+
+    return g:the_map
+endfunction
+
+" Esc
+nnoremap <expr> <cr><esc> '\<nop\>'
+nnoremap <s-cr><esc> '\<nop\>'
+
+" Method (Function)
+nmap <expr> <s-cr>m <sid>MakeSnippetMap('m', 0)
+nmap <expr> <cr>m <sid>MakeSnippetMap('m', 1)
+xmap <cr>m <cr><cr>m<tab>
+
+" Conditionals
+nmap <expr> <s-cr>ff <sid>MakeSnippetMap('f', 0)
+nmap <expr> <cr>ff <sid>MakeSnippetMap('f', 1)
+xmap <cr>ff <cr><cr>f<tab>
+
+nmap <expr> <s-cr>fl <sid>MakeSnippetMap('fl', 0)
+nmap <expr> <cr>fl <sid>MakeSnippetMap('fl', 1)
+xmap <cr>fl <cr><cr>fl<tab>
+
+nmap <expr> <s-cr>ll <sid>MakeSnippetMap('l', 0)
+nmap <expr> <cr>ll <sid>MakeSnippetMap('l', 1)
+xmap <cr>ll <cr><cr>l<tab>
+
+nmap <expr> <s-cr>lf <sid>MakeSnippetMap('lf', 0)
+nmap <expr> <cr>lf <sid>MakeSnippetMap('lf', 1)
+xmap <cr>lf <cr><cr>lf<tab>
+
+nmap <expr> <s-cr>s <sid>MakeSnippetMap('s', 0)
+nmap <expr> <cr>s <sid>MakeSnippetMap('s', 1)
+xmap <cr>s <cr><cr>s<tab>
+
+" Loops
+nmap <expr> <s-cr>w <sid>MakeSnippetMap('w', 0)
+nmap <expr> <cr>w <sid>MakeSnippetMap('w', 1)
+xmap <cr>w <cr><cr>w<tab>
+
+nmap <expr> <s-cr>rr <sid>MakeSnippetMap('r', 0)
+nmap <expr> <cr>rr <sid>MakeSnippetMap('r', 1)
+xmap <cr>rr <cr><cr>r<tab>
+
+nmap <expr> <s-cr>R <sid>MakeSnippetMap('R', 0)
+nmap <expr> <cr>R <sid>MakeSnippetMap('R', 1)
+xmap <cr>R <cr><cr>R<tab>
+
+nmap <expr> <s-cr>ro <sid>MakeSnippetMap('ro', 0)
+nmap <expr> <cr>ro <sid>MakeSnippetMap('ro', 1)
+xmap <cr>ro <cr><cr>ro<tab>
+
+nmap <expr> <s-cr>ri <sid>MakeSnippetMap('ri', 0)
+nmap <expr> <cr>ri <sid>MakeSnippetMap('ri', 1)
+xmap <cr>ri <cr><cr>ri<tab>
+
+" Print
+nmap <expr> <s-cr>p <sid>MakeSnippetMap('p', 0)
+nmap <expr> <cr>p <sid>MakeSnippetMap('p', 1)
+xmap <cr>p <cr><cr>p<tab>
+
+" Exceptions
+nmap <expr> <s-cr>e <sid>MakeSnippetMap('e', 0)
+nmap <expr> <cr>e <sid>MakeSnippetMap('e', 1)
+xmap <cr>e <cr><cr>e<tab>
+
+" Section
+nmap <expr> <s-cr>- <sid>MakeSnippetMap('-' 0)
+nmap <expr> <cr>- <sid>MakeSnippetMap('-', 1)
+xmap <cr>- <cr><cr>-<tab>
+
+" Tags
+nmap <expr> <s-cr>t <sid>MakeSnippetMap('t', 0)
+nmap <expr> <cr>t <sid>MakeSnippetMap('t', 1)
+xmap <cr>t <cr><cr>t<tab>
+
+nmap <expr> <s-cr>/ <sid>MakeSnippetMap('/', 0)
+nmap <expr> <cr>/ <sid>MakeSnippetMap('/', 1)
+xmap <cr>/ <cr><cr>/<tab>
+
+"------LEADER------
+" Esc
+nnoremap <expr> <leader><esc> '\<nop\>'
+
+"------NERDTree------
+let g:NERDTreeMapChangeRoot = 'cc'
+let g:NERDTreeMapJumpNextSibling = '<c-l>'
+
+"------VARIOUS------
+"Show highlight group.
+nnoremap <silent> <f8> :so $VIMRUNTIME/syntax/hitest.vim<cr>
+
+"------EMMET------
+" Since there is no good way to remove the mappings that aren't needed.
+let g:user_emmet_leader_key = '<s-f23>'
+
+function! s:InstallEmmetMappings()
+    imap <buffer> <a-m><a-m> <plug>(emmet-expand-abbr)
+    imap <buffer> <a-m>m <plug>(emmet-expand-abbr)
+    nmap <buffer> <a-m><a-m> <plug>(emmet-expand-abbr)
+    nmap <buffer> <a-m>m <plug>(emmet-expand-abbr)
+    xmap <buffer> <a-m><a-m> <plug>(emmet-expand-abbr)
+    xmap <buffer> <a-m>m <plug>(emmet-expand-abbr)
+
+    imap <buffer> <a-m><a-k> <plug>(emmet-move-prev)
+    imap <buffer> <a-m>k <plug>(emmet-move-prev)
+    imap <buffer> <a-m><a-l> <plug>(emmet-move-next)
+    imap <buffer> <a-m>l <plug>(emmet-move-next)
+    nmap <buffer> <a-m><a-k> <plug>(emmet-move-prev)
+    nmap <buffer> <a-m>k <plug>(emmet-move-prev)
+    nmap <buffer> <a-m><a-l> <plug>(emmet-move-next)
+    nmap <buffer> <a-m>l <plug>(emmet-move-next)
+
+    imap <buffer> <a-m><a-d> <plug>(emmet-remove-tag)
+    imap <buffer> <a-m>d <plug>(emmet-remove-tag)
+    nmap <buffer> <a-m><a-d> <plug>(emmet-remove-tag)
+    nmap <buffer> <a-m>d <plug>(emmet-remove-tag)
+
+    imap <buffer> <a-m><a-c> <plug>(emmet-update-tag)
+    imap <buffer> <a-m>c <plug>(emmet-update-tag)
+    nmap <buffer> <a-m><a-c> <plug>(emmet-update-tag)
+    nmap <buffer> <a-m>c <plug>(emmet-update-tag)
+
+    imap <buffer> <a-m><a-v> <plug>(emmet-balance-tag-inward)
+    imap <buffer> <a-m>v <plug>(emmet-balance-tag-inward)
+    imap <buffer> <a-m><a-V> <plug>(emmet-balance-tag-outward)
+    imap <buffer> <a-m>V <plug>(emmet-balance-tag-outward)
+    nmap <buffer> <a-m><a-v> <plug>(emmet-balance-tag-inward)
+    nmap <buffer> <a-m>v <plug>(emmet-balance-tag-inward)
+    nmap <buffer> <a-m><a-V> <plug>(emmet-balance-tag-outward)
+    nmap <buffer> <a-m>V <plug>(emmet-balance-tag-outward)
+    xmap <buffer> <a-m><a-v> <plug>(emmet-balance-tag-inward)
+    xmap <buffer> <a-m>v <plug>(emmet-balance-tag-inward)
+    xmap <buffer> <a-m><a-V> <plug>(emmet-balance-tag-outward)
+    xmap <buffer> <a-m>V <plug>(emmet-balance-tag-outward)
+
+    imap <buffer> <a-m><a-o> <plug>(emmet-split-join-tag)
+    imap <buffer> <a-m>o <plug>(emmet-split-join-tag)
+    nmap <buffer> <a-m><a-o> <plug>(emmet-split-join-tag)
+    nmap <buffer> <a-m>o <plug>(emmet-split-join-tag)
+
+    imap <buffer> <a-m><a-i> <plug>(emmet-image-size)
+    imap <buffer> <a-m>i <plug>(emmet-image-size)
+    nmap <buffer> <a-m><a-i> <plug>(emmet-image-size)
+    nmap <buffer> <a-m>i <plug>(emmet-image-size)
+
+    EmmetInstall
+endfunction
+autocmd FileType html,css call <sid>InstallEmmetMappings()

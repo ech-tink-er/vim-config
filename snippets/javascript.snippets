@@ -1,0 +1,81 @@
+# Functions
+snippet m
+	function ${1:FUNCTION_NAME}($2) {
+		${0:${VISUAL}}
+	}
+
+snippet fn
+	function$2($1) {
+		${0:${VISUAL}}
+	}$3
+
+snippet iife
+	(function($1) {
+		${0:${VISUAL}}
+	})($2);
+
+# Conditionals
+snippet f
+	if (${1:true}) {
+		${0:${VISUAL}}
+	}
+
+snippet l
+	else {
+		${0:${VISUAL}}
+	}
+
+snippet fl
+	if (${1:true}) {
+		${2:${VISUAL}}
+	} else {
+		$0
+	}
+
+snippet lf
+	else if (${1:true}) {
+		${0:${VISUAL}}
+	}
+
+snippet s
+	switch(${1:value}) {
+	  case ${2:0}:
+		${3:${VISUAL}}
+		break;
+	  default:
+		${0:throw new Error('Unknown value!')}
+	}
+
+# Loops
+snippet w
+	while (${1:true}) {
+		${0:${VISUAL}}
+	}
+
+snippet r
+	for (${1:var }${2:i} = ${3:0}; $2 < ${4:lenght}; $2++) {
+		${0:${VISUAL}}
+	}
+
+snippet R
+	for (${1:var }${2:i} = ${3:${4:length} - 1}; $2 >= ${5:0}; $2--) {
+		${0:${VISUAL}}
+	}
+
+snippet ro
+	for (${1:var }${2:item} of ${3:items}) {
+		${0:${VISUAL}}
+	}
+
+snippet ri
+	for (${1:var }${2:key} in ${3:obj}) {
+		${0:${VISUAL}}
+	}
+
+# Print
+snippet p
+	console.log(${1:${VISUAL}});$0
+
+# Exceptions
+snippet e
+	throw new Error($1);$0

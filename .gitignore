@@ -1,0 +1,12 @@
+# Vim Swap Files
+**/.*.s[a-w][a-p]
+
+# Plugin Files
+autoload/plug.vim
+autoload/plug.vim.old
+plugged/
+
+# Vim Memory Files
+viminfo
+nerdmarks
+views/
